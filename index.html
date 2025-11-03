@@ -91,21 +91,24 @@
         justify-content: center;
         align-items: center;
         flex: 1;
+        padding: 10px;
+        box-sizing: border-box;
       }
 
       .container {
         background: rgba(255, 255, 255, 0.08);
         backdrop-filter: blur(14px);
         border-radius: 25px;
-        padding: 30px 25px;
-        width: 90%;
-        max-width: 430px;
+        padding: 25px 20px;
+        width: 100%;
+        max-width: 400px;
         text-align: center;
         box-shadow: 0 0 30px rgba(0, 150, 255, 0.3);
         position: relative;
         z-index: 2;
         overflow: hidden;
-        margin: 20px 0;
+        margin: 10px;
+        box-sizing: border-box;
       }
 
       .container .star,
@@ -115,8 +118,8 @@
 
       .logo {
         display: block;
-        margin: 0 auto 15px auto;
-        width: 130px;
+        margin: 0 auto 12px auto;
+        width: 110px;
         height: auto;
         filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.4));
         position: relative;
@@ -125,22 +128,31 @@
 
       h1 {
         font-family: "Orbitron", sans-serif;
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         font-weight: 800;
-        letter-spacing: 1.5px;
-        margin-bottom: 8px;
+        letter-spacing: 1.2px;
+        margin-bottom: 6px;
         color: #6ecbff;
         text-shadow: 0 0 10px #6ecbff, 0 0 20px #0077ff;
         position: relative;
         z-index: 2;
+        line-height: 1.3;
       }
 
       p {
         color: #dcdcdc;
-        font-size: 0.9rem;
-        margin-bottom: 25px;
+        font-size: 0.85rem;
+        margin-bottom: 20px;
         position: relative;
         z-index: 2;
+        line-height: 1.4;
+      }
+
+      .links-container {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 15px;
       }
 
       a {
@@ -150,38 +162,38 @@
         color: white;
         text-decoration: none;
         font-weight: 600;
-        margin: 10px auto;
-        padding: 12px;
-        width: 90%;
-        border-radius: 14px;
+        padding: 12px 15px;
+        border-radius: 12px;
         transition: 0.3s;
         backdrop-filter: blur(10px);
         box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
         position: relative;
         z-index: 2;
+        font-size: 0.9rem;
+        text-align: left;
       }
 
       a:hover {
         background: rgba(110, 203, 255, 0.2);
-        transform: scale(1.05);
+        transform: scale(1.02);
         box-shadow: 0 0 20px rgba(110, 203, 255, 0.6);
       }
 
       footer {
         color: #aaa;
-        font-size: 12px;
-        margin-top: 25px;
+        font-size: 11px;
+        margin-top: 20px;
         position: relative;
         z-index: 2;
       }
 
       /* ===== MASKOT ===== */
       .maskot-container {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 230px;
-        height: 230px;
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        width: 120px;
+        height: 120px;
         z-index: 5;
         pointer-events: none;
         display: flex;
@@ -194,37 +206,35 @@
         height: auto;
         animation: floaty 3.5s ease-in-out infinite;
         filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
-        transform: translate(20%, 20%);
       }
 
       @keyframes floaty {
         0%,
         100% {
-          transform: translate(20%, 20%);
+          transform: translateY(0);
         }
         50% {
-          transform: translate(20%, 15%);
+          transform: translateY(-5px);
         }
       }
 
       .maskot-glow {
-        position: absolute;
+        position: fixed;
         bottom: 0;
         right: 0;
-        width: 160px;
-        height: 50px;
+        width: 100px;
+        height: 40px;
         background: radial-gradient(
           circle at center,
           rgba(110, 203, 255, 0.4),
           transparent 70%
         );
-        filter: blur(25px);
+        filter: blur(20px);
         z-index: 4;
         pointer-events: none;
-        transform: translate(30%, 30%);
       }
 
-      /* ===== POPUP MUSIK (centered) - PERBAIKAN ===== */
+      /* ===== POPUP MUSIK (centered) ===== */
       .music-popup {
         position: fixed;
         top: 0;
@@ -284,95 +294,135 @@
       }
 
       /* ===== RESPONSIVE ===== */
-      @media (max-width: 1024px) {
-        .maskot-container {
-          width: 200px;
-          height: 200px;
-        }
-      }
-
-      @media (max-width: 768px) {
+      @media (min-width: 768px) {
         .container {
-          padding: 25px 20px;
-          margin: 15px 0;
+          padding: 30px 25px;
+          max-width: 430px;
+        }
+
+        .logo {
+          width: 130px;
+          margin-bottom: 15px;
+        }
+
+        h1 {
+          font-size: 1.6rem;
+        }
+
+        p {
+          font-size: 0.9rem;
         }
 
         .maskot-container {
-          width: 160px;
-          height: 160px;
+          width: 180px;
+          height: 180px;
+          bottom: 20px;
+          right: 20px;
         }
 
         .maskot-glow {
-          width: 120px;
+          width: 140px;
+          height: 50px;
         }
       }
 
       @media (max-width: 480px) {
-        .maskot-container {
-          width: 130px;
-          height: 130px;
-        }
-
-        .maskot-glow {
-          width: 100px;
-        }
-
-        .music-box {
-          width: 85%;
-          padding: 20px;
-        }
-
-        .music-box h2 {
-          font-size: 1.1rem;
-        }
-
-        .music-btns button {
-          padding: 8px 15px;
-          font-size: 0.9rem;
+        .container-wrapper {
+          padding: 5px;
         }
 
         .container {
           padding: 20px 15px;
+          margin: 5px;
+          border-radius: 20px;
+        }
+
+        .logo {
+          width: 100px;
         }
 
         h1 {
-          font-size: 1.4rem;
+          font-size: 1.3rem;
+          letter-spacing: 1px;
+        }
+
+        p {
+          font-size: 0.8rem;
+          margin-bottom: 15px;
+        }
+
+        a {
+          padding: 10px 12px;
+          font-size: 0.85rem;
+          border-radius: 10px;
+        }
+
+        .maskot-container {
+          width: 100px;
+          height: 100px;
+          bottom: 5px;
+          right: 5px;
+        }
+
+        .maskot-glow {
+          width: 80px;
+          height: 30px;
         }
       }
 
       @media (max-height: 700px) {
         .container {
-          padding: 20px 15px;
-          margin: 10px 0;
+          padding: 15px 12px;
         }
 
         .logo {
-          width: 110px;
-          margin-bottom: 10px;
+          width: 90px;
+          margin-bottom: 8px;
         }
 
         h1 {
-          font-size: 1.4rem;
-          margin-bottom: 5px;
+          font-size: 1.2rem;
+          margin-bottom: 4px;
         }
 
         p {
-          margin-bottom: 15px;
-          font-size: 0.85rem;
+          margin-bottom: 12px;
+          font-size: 0.75rem;
+        }
+
+        .links-container {
+          gap: 6px;
+          margin-bottom: 10px;
         }
 
         a {
-          margin: 8px auto;
-          padding: 10px;
+          padding: 8px 10px;
+          font-size: 0.8rem;
         }
 
         footer {
-          margin-top: 15px;
+          margin-top: 12px;
+          font-size: 10px;
         }
 
         .maskot-container {
-          width: 120px;
-          height: 120px;
+          width: 80px;
+          height: 80px;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .container {
+          padding: 15px 10px;
+        }
+
+        h1 {
+          font-size: 1.1rem;
+        }
+
+        .maskot-container {
+          width: 80px;
+          height: 80px;
         }
       }
     </style>
@@ -381,7 +431,7 @@
   <body>
     <!-- Bintang -->
     <script>
-      const totalStars = 250;
+      const totalStars = 200;
       function addStars(target) {
         for (let i = 0; i < totalStars / 2; i++) {
           const star = document.createElement("div");
@@ -431,19 +481,21 @@
         <h1>PAPDC PNP 2026</h1>
         <p>[Official] Polytechnic Asian Parliamentary Debate Championship</p>
 
-        <a href="#">📝 REGISTRATION</a>
-        <a href="#">📘 GUIDE BOOK PAPDC PNP 2026</a>
-        <a href="#">📜 POSTER PAPDC</a>
-        <a href="https://www.instagram.com/ukmbahasapnp"
-          >📸 INSTAGRAM UKM-BAHASA PNP</a
-        >
-        <a href="https://www.instagram.com/papdcpnp"
-          >📸 INSTAGRAM PAPDC PNP 2026</a
-        >
-        <a href="#">💬 CONTACT PERSON 1 (ANANDHITA)</a>
-        <a href="https://api.whatsapp.com/send/?phone=6285805231267"
-          >💬 CONTACT PERSON 2 (DAFFA)</a
-        >
+        <div class="links-container">
+          <a href="#">📝 REGISTRATION</a>
+          <a href="#">📘 GUIDE BOOK PAPDC PNP 2026</a>
+          <a href="#">📜 POSTER PAPDC</a>
+          <a href="https://www.instagram.com/ukmbahasapnp"
+            >📸 INSTAGRAM UKM-BAHASA PNP</a
+          >
+          <a href="https://www.instagram.com/papdcpnp"
+            >📸 INSTAGRAM PAPDC PNP 2026</a
+          >
+          <a href="#">💬 CONTACT PERSON 1 (ANANDHITA)</a>
+          <a href="https://api.whatsapp.com/send/?phone=6285805231267"
+            >💬 CONTACT PERSON 2 (DAFFA)</a
+          >
+        </div>
 
         <footer>© 2026 PAPDC PNP</footer>
       </div>
