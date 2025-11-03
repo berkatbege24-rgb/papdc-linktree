@@ -68,7 +68,7 @@
       .container-wrapper {
         position: relative;
         z-index: 2;
-        margin-top: 80px;
+        margin-top: 40px; /* DIKURANGI dari 80px ke 40px */
         width: 100%;
         max-width: 430px; /* Membatasi lebar maksimum wrapper */
       }
@@ -77,7 +77,7 @@
         background: rgba(255, 255, 255, 0.08);
         backdrop-filter: blur(14px);
         border-radius: 25px;
-        padding: 40px 25px;
+        padding: 30px 25px; /* DIKURANGI dari 40px 25px ke 30px 25px */
         width: 90%;
         max-width: 430px;
         text-align: center;
@@ -119,7 +119,7 @@
       p {
         color: #dcdcdc;
         font-size: 0.9rem;
-        margin-bottom: 25px;
+        margin-bottom: 20px; /* DIKURANGI dari 25px ke 20px */
         position: relative;
         z-index: 2;
       }
@@ -152,7 +152,7 @@
       footer {
         color: #aaa;
         font-size: 12px;
-        margin-top: 25px;
+        margin-top: 20px; /* DIKURANGI dari 25px ke 20px */
         position: relative;
         z-index: 2;
       }
@@ -257,8 +257,8 @@
       /* ===== RESPONSIVE ===== */
       @media (max-width: 768px) {
         .container {
-          margin-top: 60px;
-          padding: 30px 20px;
+          margin-top: 30px; /* DIKURANGI dari 60px ke 30px */
+          padding: 25px 20px; /* DIKURANGI dari 30px 20px ke 25px 20px */
         }
 
         .maskot {
@@ -266,7 +266,7 @@
           bottom: -10px;
           right: -40px;
         }
-
+        
         .maskot-glow {
           width: 120px;
           right: -20px;
@@ -301,12 +301,11 @@
       }
 
       /* Perbaikan untuk mencegah overflow horizontal */
-      html,
-      body {
+      html, body {
         max-width: 100%;
         overflow-x: hidden;
       }
-
+      
       * {
         box-sizing: border-box;
       }
